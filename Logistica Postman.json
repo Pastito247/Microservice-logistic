@@ -1,0 +1,87 @@
+{
+  "info": {
+    "name": "Logistica Microservicio",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Obtener todos los envíos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/envios",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "envios"]
+        }
+      }
+    },
+    {
+      "name": "Crear un envío",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"estado\": \"En camino\",\n  \"ubicacionActual\": \"Bodega\",\n  \"cliente\": \"Pedro Ramírez\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/envios",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "envios"]
+        }
+      }
+    },
+    {
+      "name": "Obtener ruta optimizada",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/rutas?origen=Valparaiso&destino=Santiago",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "rutas"],
+          "query": [
+            { "key": "origen", "value": "Valparaiso" },
+            { "key": "destino", "value": "Santiago" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Verificar stock (pedido automático)",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8080/api/stock/verificar?producto=Perfume&stock=4",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "stock", "verificar"],
+          "query": [
+            { "key": "producto", "value": "Perfume" },
+            { "key": "stock", "value": "4" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Listar proveedores",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/proveedores",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "proveedores"]
+        }
+      }
+    }
+  ]
+}
