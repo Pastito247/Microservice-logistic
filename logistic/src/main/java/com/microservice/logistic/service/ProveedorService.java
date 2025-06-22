@@ -1,7 +1,7 @@
 package com.microservice.logistic.service;
 
 import org.springframework.stereotype.Service;
-import com.microservice.logistic.model.Proveedor;
+
 import com.microservice.logistic.repository.ProveedorRepository;
 
 @Service

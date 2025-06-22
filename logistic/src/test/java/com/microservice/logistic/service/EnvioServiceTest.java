@@ -5,7 +5,7 @@ import com.microservice.logistic.repository.EnvioRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,7 +25,7 @@ public class EnvioServiceTest {
 
     @Test
     void guardarEnvio_deberiaGuardarCorrectamente() {
-        Envio envio = new Envio(null, "En camino", "Viña del Mar", LocalDateTime.now(), "Carlos");
+        Envio envio = new Envio(null, "En camino", "Viña del Mar", LocalDate.now(), "Carlos");
 
         when(envioRepository.save(any(Envio.class))).thenReturn(envio);
 
@@ -38,7 +38,7 @@ public class EnvioServiceTest {
 
     @Test
     void buscarPorId_deberiaRetornarEnvioCorrecto() {
-        Envio envio = new Envio(1L, "Pendiente", "Santiago", LocalDateTime.now(), "Ana");
+        Envio envio = new Envio(1L, "Pendiente", "Santiago", LocalDate.now(), "Ana");
 
         when(envioRepository.findById(1L)).thenReturn(Optional.of(envio));
 
@@ -51,8 +51,8 @@ public class EnvioServiceTest {
     @Test
     void obtenerTodos_deberiaRetornarListaEnvios() {
         List<Envio> lista = List.of(
-            new Envio(1L, "Pendiente", "Valpo", LocalDateTime.now(), "Cliente A"),
-            new Envio(2L, "En camino", "Viña", LocalDateTime.now(), "Cliente B")
+            new Envio(1L, "Pendiente", "Valpo", LocalDate.now(), "Cliente A"),
+            new Envio(2L, "En camino", "Viña", LocalDate.now(), "Cliente B")
         );
 
         when(envioRepository.findAll()).thenReturn(lista);

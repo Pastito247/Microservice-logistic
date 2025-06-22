@@ -1,6 +1,6 @@
 package com.microservice.logistic;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -25,9 +25,9 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) {
         if (envioRepository.count() == 0) {
-            envioRepository.save(new Envio(null, "Pendiente", "Valparaíso", LocalDateTime.now(), "Juan Pérez"));
-            envioRepository.save(new Envio(null, "En camino", "Santiago", LocalDateTime.now(), "Ana Torres"));
-            envioRepository.save(new Envio(null, "Entregado", "Rancagua", LocalDateTime.now(), "Luis Gómez"));
+            envioRepository.save(new Envio(null, "Pendiente", "Valparaíso", LocalDate.now(), "Juan Pérez"));
+            envioRepository.save(new Envio(null, "En camino", "Santiago", LocalDate.now(), "Ana Torres"));
+            envioRepository.save(new Envio(null, "Entregado", "Rancagua", LocalDate.now(), "Luis Gómez"));
         }
 
         if (proveedorRepository.count() == 0) {

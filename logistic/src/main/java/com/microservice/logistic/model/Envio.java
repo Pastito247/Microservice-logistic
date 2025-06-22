@@ -1,6 +1,6 @@
 package com.microservice.logistic.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +22,6 @@ public class Envio {
 
     private String estado;
     private String ubicacionActual;
-    private LocalDateTime fechaCreacion;
+    private LocalDate fechaCreacion;
     private String cliente;
 }
